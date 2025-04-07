@@ -12,6 +12,6 @@
 </head>
 <body>
 Todo List Page
-
+${list}
 </body>
 </html>
