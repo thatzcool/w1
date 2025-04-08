@@ -24,7 +24,7 @@ public enum TodoService {
     public void register(TodoDTO todoDTO) {
         System.out.println("DEBUG.........." + todoDTO);
     }
-
+   //Todo 전체 리스트 반환 기능
     public List<TodoDTO> getList() {
 
         List<TodoDTO> todoDTOList = IntStream.range(0, 10).mapToObj(i -> {
@@ -40,6 +40,17 @@ public enum TodoService {
         return todoDTOList;
 
     }
+    // 사용자 선택한 Todo 1개 반환
+      public TodoDTO get(Long tno){
+           TodoDTO dto = new TodoDTO();
+           dto.setTno(tno);
+           dto.setDueDate(LocalDateTime.now());
+           dto.setTitle("Sample Dto");
+           dto.setFinished(true);
+        return dto;
+      }
+
+
 }
 
 //enum 타입은 정해진 수만큼 객체를 생성할 수 있다.
